@@ -42,7 +42,7 @@ void write_password() {
 }
 
 void open_FF14() {
-	HINSTANCE status = ShellExecute(NULL, "open", launcher_path, NULL, NULL, SW_SHOWDEFAULT);
+	HINSTANCE status = ShellExecuteA(NULL, "open", launcher_path, NULL, NULL, SW_SHOWDEFAULT);
 
 	cout << status << endl;
 }
@@ -81,7 +81,7 @@ string read_path() {
 		create_file(path_file, p_str);
 		return p_str;
 	}
-	file >> p_str;
+	getline(file, p_str);
 	file.close();
 	return p_str;
 }
